@@ -4,11 +4,13 @@ import useFetch from "../useFetch";
 const Books = () => {
   const [successMessage, setSuccessMessage] = useState("");
 
-  const { data, loading, error } = useFetch("https://be-4-assignment1-kappa.vercel.app/books");
+  const apiBaseURL = "https://be-4-assignment1-kappa.vercel.app"
+
+  const { data, loading, error } = useFetch(`${apiBaseURL}/books`);
 
   const handleDelete = async (bookId) => {
     try {
-      const response = await fetch(`https://be-4-assignment1-kappa.vercel.app/books/${bookId}`, {
+      const response = await fetch(`${apiBaseURL}/books/${bookId}`, {
         method: "DELETE",
       });
 

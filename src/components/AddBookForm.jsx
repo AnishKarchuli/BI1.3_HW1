@@ -2,6 +2,8 @@ import React, { useState } from "react"
 
 const AddBookForm = () => {
 
+    const apiBaseURL = "https://be-4-assignment1-kappa.vercel.app"
+
     const [formData, setFormData] = useState({
         title: "",
         author: "",
@@ -22,7 +24,7 @@ const AddBookForm = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const response = await fetch('https://be-4-assignment1-kappa.vercel.app/books', 
+            const response = await fetch(`${apiBaseURL}/books`, 
                 {
                     method: "POST",
                     headers:  {

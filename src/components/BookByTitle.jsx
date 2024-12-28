@@ -1,7 +1,9 @@
 import useFetch from "../useFetch";
 
 const BookByTitle = ({ title }) => {
-    const { data, loading, error } = useFetch(`https://be-4-assignment1-kappa.vercel.app/books/${title}`)
+
+    const apiBaseURL = "https://be-4-assignment1-kappa.vercel.app"
+    const { data, loading, error } = useFetch(`${apiBaseURL}/books/${title}`)
 
     return data ? (
         <div>

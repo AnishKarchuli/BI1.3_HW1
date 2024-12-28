@@ -1,7 +1,8 @@
 import useFetch from "../useFetch";
 
 const BookByAuthor = ({ author }) => {
-    const { data, loading, error } = useFetch(`https://be-4-assignment1-kappa.vercel.app/books/author/${author}`)
+    const apiBaseURL = "https://be-4-assignment1-kappa.vercel.app"
+    const { data, loading, error } = useFetch(`${apiBaseURL}/books/author/${author}`)
 
     const books = Array.isArray(data) ? data : [data]
 
